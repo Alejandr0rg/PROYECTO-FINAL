@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ParkControl | Parqueadero</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="logo">P</div><div><b>ParkControl</b><small>Gestión de parqueadero</small></div><span class="active">● Sistema activo</span></header>
+<main>
+<section class="intro"><div><small class="eyebrow">PANEL DE CONTROL</small><h1>Administración del parqueadero</h1><p>Registra ingresos, consulta vehículos y calcula el cobro de salida.</p></div><div class="date"><small>FECHA DE HOY</small><b id="today"></b></div></section>
+<section class="stats">
+<div class="card"><small>Espacios totales</small><strong id="total">20</strong></div>
+<div class="card"><small>Espacios ocupados</small><strong id="occupied">0</strong></div>
+<div class="card"><small>Espacios disponibles</small><strong id="available">20</strong></div>
+</section>
+<section class="layout">
+<div class="panel"><h2>Registrar vehículo</h2><p>Completa los datos de ingreso.</p>
+<form id="form"><label for="plate">Placa</label><input id="plate" placeholder="Ej. ABC123" maxlength="10" required>
+<label for="type">Tipo de vehículo</label><select id="type"><option>Carro</option><option>Motocicleta</option></select>
+<button>+ Registrar ingreso</button><small class="hint">Carro: $3.000/hora · Moto: $1.500/hora</small><p id="message"></p></form></div>
+<div class="panel"><div class="listhead"><div><h2>Vehículos registrados</h2><p>Vehículos que siguen en el parqueadero.</p></div><input id="search" placeholder="Buscar placa..."></div>
+<div class="tablewrap"><table><thead><tr><th>Placa</th><th>Tipo</th><th>Ingreso</th><th>Acción</th></tr></thead><tbody id="list"></tbody></table></div><div id="empty">No hay vehículos registrados.</div></div>
+</section>
+<section class="panel rates"><div><h2>Tarifas</h2><p>Se cobra por hora iniciada, mínimo una hora.</p></div><b>Carro <span>$3.000 / hora</span></b><b>Motocicleta <span>$1.500 / hora</span></b></section>
+<footer>ParkControl · Proyecto académico</footer>
+</main><dialog id="receipt"><h2>Salida registrada</h2><div id="details"></div><button id="close" type="button">Aceptar</button></dialog>
+<script src="script.js"></script></body></html>
